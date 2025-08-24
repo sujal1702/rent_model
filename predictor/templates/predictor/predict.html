@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Rent Prediction</title>
+</head>
+<body>
+    <h2>Enter House Details</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Predict Rent</button>
+    </form>
+
+    {% if result %}
+        <h3>Predicted Rent: ₹{{ result }}</h3>
+    {% endif %}
+</body>
+</html>
